@@ -12,7 +12,7 @@ class Home extends Component {
 
   onClick = () => {
     getApplications()
-      .then(applications => {
+      .then((applications) => {
         this.props.updateApplications(applications)
       })
       .catch(err => console.log(err))
@@ -23,9 +23,10 @@ class Home extends Component {
       <div>
         <div className={styles.container} data-tid="container">
           <h2 onClick={this.onClick}>Home</h2>
+          <img src="file:///Users/manojsinghnegi/Downloads/AppIcon.icns" />
           {this.props.appStore.applications.map((application, index) => {
             return <p onClick={() => openApp(application)} key={index}>
-              {application}
+              {application.name}
             </p>
           })}
         </div>
